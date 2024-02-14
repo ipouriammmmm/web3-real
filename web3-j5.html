@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        .side-nav {
+            position: fixed;
+            background-color: red;
+            color: aliceblue;
+            width: 200px;
+            height: 100%;
+            right: -200px;
+            transition: 1s;
+            top: 0;
+        }
+
+        .close {
+            position: absolute;
+            right: 5px;
+            cursor: pointer;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="showmodal()">show pls</button>
+    <div class="side-nav" id="sidnav">
+        <span onclick="hidemodal()" class="close">x</span>
+    </div>
+    <script>
+        function showmodal() {
+            document.getElementById('sidnav').style.right = '0';
+        }
+        function hidemodal() {
+            document.getElementById('sidnav').style.right = '-200px';
+        }
+    </script>
+</body>
+
+</html>

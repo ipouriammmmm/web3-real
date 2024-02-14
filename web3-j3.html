@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa-ir">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        direction: rtl;
+      }
+      .box {
+        width: 100%;
+        padding: 10px 30px;
+      }
+      span.text {
+        display: inline-block;
+        font-size: 1.5vw;
+        position: relative;
+        width: 100%;
+      }
+      span::after {
+        content: "";
+        width: 90%;
+        height: 10px;
+        background-color: rgba(0, 0, 0, 0.452);
+        position: absolute;
+        bottom: 0.7vw;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="box">
+      <span class="text">مشخصات مشتری</span>
+    </div>
+    <script>
+        arr2D = [
+          [7, 25],
+          [5, 24],
+          [65, 23, 14],
+        ];
+        console.log(arr2D[1][0]);
+      </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+      <style>
+        #mydiv1{
+            background-color: orange;
+             height: 400px;
+             display: flex;
+
+
+        }
+        #myp1{
+         background-color: rgb(6, 96, 175);
+        }
+     </style> 
+<style>
+
+</style>
+</head>
+
+<body>
+
+     <div id="mydiv1">
+    <h2>bubbling</h2><br>
+    <p id="myp1">click me</p>  
+    </div> <br>
+     <button id="btn">click me</button>
+    <p id="si"></p> 
+    <script>
+  
+        document.getElementById('myp1').addEventListener('click',function(){
+            alert('hi1')
+        },false);
+        document.getElementById('mydiv1').addEventListener('click',function(){
+            alert('hi12')
+        },false);
+        var x=document.getElementById('btn');
+        x.addEventListener('click',mm1);
+        x.addEventListener('mouseover',mm2);
+        x.addEventListener('mouseout',mm3);
+        
+        function mm1(){
+            document.getElementById('si').innerHTML +='click <br>';
+        }
+        function mm2(){
+            document.getElementById('si').innerHTML +='click2 <br>';
+        }
+        function mm3(){
+            document.getElementById('si').innerHTML +='click3 <br>';
+        }
+    
+
+
+        
+    </script>
+</body>
+
+</html>

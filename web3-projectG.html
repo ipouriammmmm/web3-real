@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Roboto Mono", monospace;
+    }
+
+    .body {
+      background: #271d2f;
+    }
+
+    .buttons {
+      margin: 50px;
+    }
+
+    .buttons {
+      text-align: center;
+    }
+
+    .buttons button {
+      background: #1001e4;
+      color: #000000;
+      border: 0;
+      outline: none;
+      width: 120px;
+
+      height: 40px;
+      margin: 5px;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    #toastBox {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .toast {
+      width: 400px;
+      height: 80px;
+      background: #fff;
+      font-weight: 500;
+      margin: 15px 0;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      position: relative;
+      transform: translateX(100%);
+      animation: moveLeft 0.5s linear forwards;
+    }
+
+    @keyframes moveLeft {
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .toast i {
+      margin: 0 20px;
+      font-size: 35px;
+      color: green;
+    }
+
+    .toast.error i {
+      color: red;
+    }
+
+    .toast.Invalid i {
+      color: orange;
+    }
+
+    .toast::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 5px;
+      background: green;
+      animation: anim 5s linear forwards;
+    }
+
+    @keyframes anim {
+      100% {
+        width: 0;
+      }
+    }
+
+    .toast.error::after {
+      background: red;
+    }
+
+    .toast.Invalid::after {
+      background: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="buttons">
+    <button onclick="showToast(successMsg)">ثبت</button>
+    <button onclick="showToast(errorMsg)">خطا</button>
+    <button onclick="showToast(invalidMsg)">پوچ</button>
+  </div>
+
+  <div id="toastBox"></div>
+
+  <script>
+    let toastBox = document.getElementById("toastBox");
+    let successMsg =
+      '<i class="fa fa-check-circle" aria-hidden="true"></i> تراکنش شما با موفقیت انجام شد';
+    let errorMsg =
+      '<i class="fa fa-times-circle" aria-hidden="true"></i>لطفا مجددا تلاش کنید';
+    let invalidMsg =
+      '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> !چیزی یافت نشد ';
+
+    function showToast(msg) {
+      let toast = document.createElement("div");
+      toast.classList.add("toast");
+      toast.innerHTML = msg;
+      toastBox.appendChild(toast);
+
+      if (msg.includes("error")) {
+        toast.classList.add("error");
+      }
+      if (msg.includes("Invalid")) {
+        toast.classList.add("Invalid");
+      }
+
+      setTimeout(() => {
+        toast.remove();
+      }, 6000);
+    }
+  </script>
+</body>
+
+</html>

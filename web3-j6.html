@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   
+     <label for="">وزن</label>
+    <input id="weight" type="text">
+    <br>
+    <label for="">قد</label>
+    <input id="height" type="text" style="margin-left: 14px;margin-top: 10px;margin-bottom: 10px;">
+    <br>
+    <button style="margin-left: 70px;" onclick="calcBmi()">محاسبه</button>
+    <hr>
+    <p>مقدار bmi شما برار <span id="bmi">....</span></p>
+    <p> = <span id="bmiresult"></span></p>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+    </style>
+  
+
+    <script>
+  
+
+        // پروژه اوا
+        function calcBmi() {
+            let weight = Number(document.getElementById('weight').value);
+            let height = Number(document.getElementById('height').value);
+
+            let bmi = Math.round(weight / (height ** 2));
+            console.log(bmi);
+            document.getElementById('bmi').innerText = bmi;
+
+            if (bmi < 18) {
+                document.getElementById('bmiresult').innerText = 'low'
+            } else {
+                document.getElementById('bmiresult').innerText = 'good'
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<!-- با کلیک بر المان ان حذف شود -->
+
+    <p>salammmm1.</p>
+    <p>helooo</p>
+    <p>hi mr rezavand</p>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("p").click(function(){
+        $(this).hide();
+      });
+    });
+    </script>
+
+<!-- حذف و اضاف شدن یک متن -->
+    
+<button>کلیک کنید</button>
+
+<p>This is a paragraph with little content.</p>
+<p>This is another small paragraph.</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").toggle();
+  });
+});
+
+</script>
+
+<!-- third example  get -->
+
+<p>Name: <input type="text" id="test" value="Mickey Mouse"></p>
+
+<button>Show Value</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    alert("Value: " + $("#test").val());
+  });
+});
+</script>
+</body>
+</html>
+

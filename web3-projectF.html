@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Roboto Mono", monospace;
+    }
+
+    body {
+      background: #f40000;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .input-box {
+      background: #fff;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 5px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 10px 0;
+      border: 0;
+      outline: none;
+      font-size: 24px;
+      color: #555;
+    }
+
+    .input-box img {
+      width: 35px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+
+  </div>
+  <div>
+    <div class="input-box">
+
+      <input type="password" placeholder="password" id="password" />
+      <img src="img/aaesys2.png" id="eyeicon" />
+
+    </div>
+    <div>
+      <p style="text-align: center;margin-top: 20px;font-size: 25px;" id="massage">پسورد شما<span id="strength"></span>
+      </p>
+    </div>
+  </div>
+  <script>
+    let eyeicon = document.getElementById("eyeicon");
+    let password = document.getElementById("password");
+
+    eyeicon.onclick = function () {
+      if (password.type == "password") {
+        password.type = "text";
+        eyeicon.src = "img/aaeyes.png";
+      } else {
+        password.type = "password";
+        eyeicon.src = "img/aaesys2.png";
+      }
+    };
+    var pass = document.getElementById("password");
+    var msg = document.getElementById("massage");
+    var str = document.getElementById("strength");
+
+    pass.addEventListener("input", () => {
+      if (pass.value.length > 0) {
+        msg.style.display = "block";
+      } else {
+        msg.style.display = "none";
+      }
+      if (pass.value.length < 4) {
+        str.innerHTML = " ضعیف است ";
+        pass.style.borderColor = "#ff5925";
+        msg.style.color = "#ff5925";
+      } else if (pass.value.length >= 4 && pass.value.length < 8) {
+        str.innerHTML = " متوسط است ";
+        pass.style.borderColor = "yellow";
+        msg.style.color = "yellow";
+      } else if (pass.value.length >= 8) {
+        str.innerHTML = " قوی است ";
+        pass.style.borderColor = "#26d730";
+        msg.style.color = "#26d730";
+      }
+    });
+  </script>
+</body>
+
+</html>

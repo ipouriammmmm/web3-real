@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+
+        /* پروزه دوم */
+         .modal {
+            color: aliceblue;
+            background-color: red;
+            width: 50%;
+            height: 50%;
+            position: fixed;
+            left: 25%;
+            top: 25%;
+            display: none;
+        }
+
+        span {
+            position: absolute;
+            right: 5px;
+            top: 1px;
+            cursor: pointer;
+        } 
+   
+    </style>
+  
+</head>
+<body>
+   
+     <!-- پزوژه دوم   -->
+     <button onclick="showmodal()">show</button>
+
+    <div id="loginmodal" class="modal">
+        sit amet consectetur adip
+        <span onclick="closemodal()">x</span>
+    </div> 
+
+    <script>
+  
+        // پروزه دوم
+        function showmodal() {
+            document.getElementById('loginmodal').style.display = 'block';
+
+
+        }
+        function closemodal() {
+            document.getElementById('loginmodal').style.display = 'none';
+
+
+        }
+     
+       
+
+    </script>
+</body>
+</html>

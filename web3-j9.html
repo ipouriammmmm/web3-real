@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bar Charts</title>
+  </head>
+  <body>
+    <div>
+      <canvas id="myChart"></canvas>
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: [
+            "Red",
+            "Blue",
+            "Yellow",
+            "Green",
+            "Purple",
+            "Orange",
+            "Pink",
+            "Gray",
+          ],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [20, 5, 17, 10, 2, 3, 7, 15],
+              borderWidth: 1,
+              borderColor: [
+                "rgba(234, 32, 39,1.0)",
+                "rgba(27, 20, 100,1.0)",
+                "rgba(247, 159, 31,1.0)",
+                "rgba(0, 148, 50,1.0)",
+                "rgba(111, 30, 81,1.0)",
+                "rgba(238, 90, 36,1.0)",
+                "rgba(252, 66, 123,1.0)",
+                "rgba(87, 101, 116,1.0)",
+              ],
+              backgroundColor: [
+                "rgba(234, 32, 39,0.5)",
+                "rgba(6, 82, 221,0.5)",
+                "rgba(255, 195, 18,0.5)",
+                "rgba(163, 203, 56,0.5)",
+                "rgba(181, 52, 113,0.5)",
+                "rgba(238, 90, 36,0.5)",
+                "rgba(252, 66, 123,0.5)",
+                "rgba(131, 149, 167,0.5)",
+              ],
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      
+    </script>
+  </body>
+</html>
